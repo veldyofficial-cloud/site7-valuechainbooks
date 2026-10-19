@@ -1,0 +1,13 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>페이지 없음</title>
+<script>
+// imweb page names are case-insensitive (/About == /ABOUT); GitHub Pages is not, so redirect to the stored folder name
+(function () {
+  var base = '/site7-valuechainbooks/', pages = ['ABOUT','CLASS','CONSULTING','CONTACT','GeneralBook','NOTICE','NewBook','Bestseller','PictureBook','VALUECHAINBOOKS'];
+  var map = { books: 'NewBook' }; pages.forEach(function (p) { map[p.toLowerCase()] = p; });
+  var path = location.pathname;
+  if (path.indexOf(base) !== 0) return;
+  var rest = path.slice(base.length).split('/'), t = map[(rest[0] || '').toLowerCase()];
+  if (t && t !== rest[0]) { rest[0] = t; location.replace(base + rest.join('/') + location.search + location.hash); }
+})();
+</script></head><body style="font-family:sans-serif;text-align:center;padding:80px 16px">
+<p>페이지를 찾을 수 없습니다.</p><p><a href="/site7-valuechainbooks/">홈으로</a></p></body></html>
